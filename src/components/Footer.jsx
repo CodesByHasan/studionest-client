@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import { ArrowUpRight, Camera } from "lucide-react";
 
