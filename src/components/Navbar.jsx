@@ -81,25 +81,27 @@ export default function Navbar() {
           </Link>
 
           <Button
-            asChild
+            render={<Link href="/signup" />}
             className="h-8 rounded-md bg-[#252d42] px-3.5 text-sm font-medium text-white hover:bg-[#343e58]"
           >
-            <Link href="/signup">Sign Up</Link>
+            Sign Up
           </Button>
         </div>
 
         {/* Mobile Navigation */}
         <div className="lg:hidden">
           <Sheet>
-            <SheetTrigger asChild>
-              <Button
-                variant="outline"
-                size="icon"
-                aria-label="Open navigation menu"
-              >
-                <Menu className="size-5" />
-              </Button>
-            </SheetTrigger>
+            <SheetTrigger
+              render={
+                <Button
+                  variant="outline"
+                  size="icon"
+                  aria-label="Open navigation menu"
+                >
+                  <Menu className="size-5" />
+                </Button>
+              }
+            />
 
             <SheetContent
               side="right"
@@ -113,44 +115,54 @@ export default function Navbar() {
               </SheetHeader>
 
               <div className="mt-6 flex flex-col gap-2">
+                {/* Navigation Links */}
                 {navLinks.map((item) => {
                   const active = isActiveRoute(pathname, item.href);
 
                   return (
-                    <SheetClose asChild key={item.href}>
-                      <Link
-                        href={item.href}
-                        className={`rounded-lg px-3 py-3 text-base transition-colors ${
-                          active
-                            ? "bg-gray-100 font-semibold text-[#252d42]"
-                            : "text-gray-700 hover:bg-gray-100"
-                        }`}
-                      >
-                        {item.label}
-                      </Link>
-                    </SheetClose>
+                    <SheetClose
+                      key={item.href}
+                      render={
+                        <Link
+                          href={item.href}
+                          className={`rounded-lg px-3 py-3 text-base transition-colors ${
+                            active
+                              ? "bg-gray-100 font-semibold text-[#252d42]"
+                              : "text-gray-700 hover:bg-gray-100"
+                          }`}
+                        >
+                          {item.label}
+                        </Link>
+                      }
+                    />
                   );
                 })}
 
                 <div className="my-3 border-t border-gray-200" />
 
-                <SheetClose asChild>
-                  <Link
-                    href="/signin"
-                    className="rounded-lg px-3 py-3 text-base text-gray-800 hover:bg-gray-100"
-                  >
-                    Sign in
-                  </Link>
-                </SheetClose>
+                {/* Sign In */}
+                <SheetClose
+                  render={
+                    <Link
+                      href="/signin"
+                      className="rounded-lg px-3 py-3 text-base text-gray-800 hover:bg-gray-100"
+                    >
+                      Sign in
+                    </Link>
+                  }
+                />
 
-                <SheetClose asChild>
-                  <Button
-                    asChild
-                    className="bg-[#252d42] text-white hover:bg-[#343e58]"
-                  >
-                    <Link href="/signup">Sign Up</Link>
-                  </Button>
-                </SheetClose>
+                {/* Sign Up */}
+                <SheetClose
+                  render={
+                    <Link
+                      href="/signup"
+                      className="rounded-lg bg-[#252d42] px-3 py-3 text-center text-base font-medium text-white transition-colors hover:bg-[#343e58]"
+                    >
+                      Sign Up
+                    </Link>
+                  }
+                />
               </div>
             </SheetContent>
           </Sheet>
@@ -159,6 +171,7 @@ export default function Navbar() {
     </header>
   );
 }
+
 
 
 
