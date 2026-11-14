@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# StudioNest — Find Your Creative Space
 
-## Getting Started
+StudioNest is a peer-to-peer creative studio marketplace where photographers, filmmakers, podcasters, musicians, and other creators can discover and book professional creative spaces.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Browse photography studios, film stages, podcast lounges, music suites, and workshops.
+- User registration, email/password login, and Google authentication.
+- Create, view, update, and delete studio listings.
+- View studio details, amenities, pricing, and host information.
+- Submit booking requests and manage reservations.
+- JWT-protected private routes and authenticated API operations.
+- Responsive interface built with Next.js, Tailwind CSS, and shadcn/ui.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technology Stack
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Next.js App Router and JavaScript.
+- Tailwind CSS 4 and shadcn/ui.
+- Better Auth, MongoDB Adapter, and JWT.
+- Express.js and MongoDB.
+- Sonner for toast notifications.
+- Swiper.js for the homepage slider.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Local Setup
 
-## Learn More
+1. Clone the client repository.
+2. Run `npm install`.
+3. Create `.env.local` and configure the required environment variables.
+4. Configure Google OAuth credentials.
+5. Configure MongoDB and the Express server.
+6. Run `npm run dev`.
+7. Visit http://localhost:3000.
 
-To learn more about Next.js, take a look at the following resources:
+## Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `NEXT_PUBLIC_API_URL`
+- `BETTER_AUTH_URL`
+- `BETTER_AUTH_SECRET`
+- `MONGODB_URI`
+- `GOOGLE_CLIENT_ID`
+- `GOOGLE_CLIENT_SECRET`
+- `NEXT_PUBLIC_IMGBB_API_KEY`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Examiner Credentials
 
-## Deploy on Vercel
+Add your actual test account credentials after creating the account. Do not publish personal passwords or production credentials.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Live Website
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add your deployed StudioNest URL here after deployment.
